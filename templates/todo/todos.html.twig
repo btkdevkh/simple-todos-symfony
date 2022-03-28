@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Todos{% endblock %}
+
+{% block headingH1 %}Todos{% endblock %}
+
+{% block body %}
+  <table class="table table-light">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Text</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for todo in todos %}
+        <tr>
+          <td>{{ todo.id }}</td>
+          <td><a href="/todos/{{ todo.id }}">{{ todo.text }}<a/></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
